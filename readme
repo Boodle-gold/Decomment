@@ -2,7 +2,7 @@ Assignment 1 readme File
 
 ------------------------------------------------------------------------
 What is your name?
-
+Ben Goldston
 
 
 ------------------------------------------------------------------------
@@ -12,7 +12,7 @@ in the "Policies" web page (also available on armlab in the file
 ~cos217/AuthorizedSourcesList ) to this section of the readme file,
 and edit it as appropriate.
 
-
+Course Lectures, Precept Materials
 
 ------------------------------------------------------------------------
 What unauthorized sources of information did you use to complete the
@@ -26,6 +26,7 @@ interaction, may additionally require the interaction being reported
 to the Committee on Discipline. Write "None" if you used no
 unauthorized sources of information.
 
+None
 
 
 ------------------------------------------------------------------------
@@ -36,7 +37,7 @@ enter your name in the space below the following affirmation:
 This paper represents my own work in accordance with University
 regulations.
 
-
+/s/ Benjamin Goldston
 
 ------------------------------------------------------------------------
 In fulfillment of the requirement from section 2.4.6 of the Academic
@@ -44,18 +45,21 @@ Regulations in Princeton's Rights, Rules, Responsibilities guide,
 and the COS 217 Generative AI policy, disclose and describe how you
 used AI in completing this assignment:
 
-
+I did not use AI to assist with this assignment
 
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
 
-
+Fun but difficult to debug at times
 
 ------------------------------------------------------------------------
 (optional) What information can you provide about your submission that
 will help your grader to grade it in the most favorable light? In
 particular, what bugs are in your submission?
 
-
+I could find no other way to deal with an EOF after finding
+a / charecter than to use a slightly ugly if statement at 
+the end. While I dont think its a bug its a very ugly piece of code
+so Im sorry.
 
 ------------------------------------------------------------------------

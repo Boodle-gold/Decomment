@@ -1,0 +1,58 @@
+========================================================================
+Decomment DFA
+Author: Ben Goldston
+========================================================================
+
+NORMAL (accept) <-- the start state
+   '/':  ENTERING_COMMENT
+   '\'':  IN_CHAR_LITERAL
+   '"':  IN_STRING_LITERAL
+   other:  NORMAL
+
+ENTERING_COMMENT (accept)
+   '/':  ENTERING_COMMENT 
+   '*':  IN_COMMENT       
+   '\'':  IN_CHAR_LITERAL  
+   '"':  IN_STRING_LITERAL
+   other: NORMAL           
+
+IN_COMMENT (reject)
+   '*':  EXITING_COMMENT
+   '\n': IN_COMMENT       
+   other: IN_COMMENT
+
+EXITING_COMMENT (reject)
+   '*':  EXITING_COMMENT   
+   '/':  NORMAL            
+   '\n': IN_COMMENT         
+   other: IN_COMMENT
+
+IN_CHAR_LITERAL (accept)
+   '\'':  NORMAL            
+   '\\':  ESCAPED_CHAR_IN_CHAR
+   other: IN_CHAR_LITERAL
+
+ESCAPED_CHAR_IN_CHAR (accept)
+   other: IN_CHAR_LITERAL 
+
+IN_STRING_LITERAL (accept)
+   '"':   NORMAL            
+   '\\':  ESCAPED_CHAR_IN_STRING
+   other: IN_STRING_LITERAL
+
+ESCAPED_CHAR_IN_STRING (accept)
+   other: IN_STRING_LITERAL 
+
+------------------------------------------------------------------------
+Accepting/Rejecting States
+------------------------------------------------------------------------
+
+NORMAL (accept) <-- start state
+ENTERING_COMMENT (accept)
+IN_CHAR_LITERAL (accept)
+ESCAPED_CHAR_IN_CHAR (accept)
+IN_STRING_LITERAL (accept)
+ESCAPED_CHAR_IN_STRING (accept)
+
+IN_COMMENT (reject)  // rejecting if EOF found here
+EXITING_COMMENT (reject)  // rejecting if EOF found here
